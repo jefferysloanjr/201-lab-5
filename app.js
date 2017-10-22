@@ -14,6 +14,7 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 function sum(a,b){ //eslint-disable-line
   var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
+  console.log(theSum);
   return [theSum, message];
 }
 
@@ -34,6 +35,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a,b) { //eslint-disable-line
   var theProduct = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
+  console.log(theProduct);
   return [theProduct, message];
 }
 
@@ -54,12 +56,19 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // TODO: Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+function sumAndMultiply(a,b,c) { //eslint-disable-line
+  var theSum = sum(sum(a,b)[0],c)[0];
+  console.log('sum ', theSum);
+  var theProduct = multiply(multiply(a,b)[0],c)[0];
+  console.log('p' ,theProduct);
+  var message = a + ' and ' + b + ' and ' + c + ' sum to ' + theSum + '.';
+  console.log(message);
+  var messageTwo = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.';
+  return[theSum, theProduct, message, messageTwo];
 }
 
-// TODO: Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+// TODO: Here is the test for s9-umAndMultiply(); uncomment it to run it
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
